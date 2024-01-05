@@ -17,7 +17,7 @@ void ClearConsoleScreen() {
 
 void FSModSInterfaceInit() {
     std::cout << "========================================" << std::endl;
-    std::cout << "   FreeSpaceModStarter 1.0.0-f" << std::endl;
+    std::cout << "   FreeSpaceModStarter 1.0.1-f" << std::endl;
     std::cout << "   Designed by LuytenKy" << std::endl;
     std::cout << "========================================" << std::endl;
 }
