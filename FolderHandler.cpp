@@ -17,6 +17,11 @@ FSModS Ver: 1.0.1-f
 
 namespace fs = std::filesystem;
 
+/*
+Remove comments to enable
+#define AllowUnusedDirectories
+*/ 
+
 namespace FolderHandler {
     void CreateModDirectory(const std::string ModFileLoc) {
         // List of directories to generate
