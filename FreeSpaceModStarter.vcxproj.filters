@@ -33,9 +33,3 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
-  <ItemGroup>
-    <Image Include="FSModS.ico">
-      <Filter>Resource Files</Filter>
-    </Image>
-  </ItemGroup>
-</Project>
