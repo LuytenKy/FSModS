@@ -1,13 +1,13 @@
 /*
 Designed by LuytenKy
 
-FSModS Ver: 1.0.1-f
+FSModS Ver: 1.0.2-f
 */
 
 #include "FolderHandler.h"
 #include <filesystem>
 #include <iostream>
-
+#include <set>
 // Platform-independent method to wait for user input
 #ifdef _WIN32
 #include <conio.h>
@@ -15,12 +15,13 @@ FSModS Ver: 1.0.1-f
 #include <cstdio>
 #endif
 
-namespace fs = std::filesystem;
-
 /*
-Remove comments to enable
-#define AllowUnusedDirectories
-*/ 
+* Remove comment to enable
+* #define AllowUnusedDirectories
+*/
+
+
+namespace fs = std::filesystem;
 
 namespace FolderHandler {
     void CreateModDirectory(const std::string ModFileLoc) {
@@ -32,12 +33,11 @@ namespace FolderHandler {
             "/voice/command_briefings", "/voice/debriefings", "/voice/personas",
             "/voice/special", "/voice/training"
         };
+
         // Certain directories that aren't really needed
-#ifdef AllowUnusedDirectories
-        directories.insert(directories.end(), {
+        const std::vector<std::string> unusedDirectories = {
             "/force feedback", "/multidata", "/text", "/players", "/intelanims", "/movies", "/demos"
-            });
-#endif
+        };
 
         bool allDirectoriesOkay = true;
 
@@ -64,6 +64,31 @@ namespace FolderHandler {
                 allDirectoriesOkay = false;
             }
         }
+#ifdef AllowUnusedDirectories
+        for (const auto& directory : unusedDirectories) {
+            fs::path absolutePath = fs::absolute(ModFileLoc + directory);
+
+            try {
+                // Create intermediate directories if they don't exist
+                if (!fs::exists(absolutePath.parent_path())) {
+                    fs::create_directories(absolutePath.parent_path());
+                }
+
+                // Now create the final directory
+                if (fs::create_directory(absolutePath)) {
+                    std::cout << "Directory created: " << absolutePath << std::endl;
+                }
+                else {
+                    std::cerr << "Failed to create directory: " << absolutePath << std::endl;
+                    allDirectoriesOkay = false;
+                }
+            }
+            catch (const fs::filesystem_error& ex) {
+                std::cerr << "Filesystem error: " << ex.what() << std::endl;
+                allDirectoriesOkay = false;
+            }
+        }
+#endif // AllowUnusedDirectories
 
         if (allDirectoriesOkay) {
             std::cout << "All directories were successfully generated." << std::endl;

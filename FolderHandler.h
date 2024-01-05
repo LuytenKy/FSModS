@@ -1,7 +1,7 @@
 /*
 Designed by LuytenKy
 
-FSModS Ver: 1.0.1-f
+FSModS Ver: 1.0.2-f
 */
 
 #pragma once
@@ -10,5 +10,4 @@ FSModS Ver: 1.0.1-f
 
 namespace FolderHandler {
     void CreateModDirectory(const std::string ModFileLoc);
-    bool CheckModDirectories(const std::string ModFileLoc);
 }
