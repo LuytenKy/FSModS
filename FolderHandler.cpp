@@ -1,3 +1,9 @@
+/*
+Designed by LuytenKy
+
+FSModS Ver: 1.0.1-f
+*/
+
 #include "FolderHandler.h"
 #include <filesystem>
 #include <iostream>
