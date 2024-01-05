@@ -63,6 +63,7 @@ namespace FolderHandler {
                 allDirectoriesOkay = false;
             }
         }
+        
 #ifdef AllowUnusedDirectories
         for (const auto& directory : unusedDirectories) {
             fs::path absolutePath = fs::absolute(ModFileLoc + directory);
