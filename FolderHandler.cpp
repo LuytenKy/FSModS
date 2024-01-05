@@ -20,7 +20,6 @@ FSModS Ver: 1.0.2-f
 * #define AllowUnusedDirectories
 */
 
-
 namespace fs = std::filesystem;
 
 namespace FolderHandler {
