@@ -34,12 +34,15 @@ namespace InputHandler {
         std::cin >> Answer;
 
         if (Answer == "y" || Answer == "Y") {
+            Answer.clear();
             return true;
         }
         else if (Answer == "n" || Answer == "N") {
+            Answer.clear();
             return false;
         }
         else {
+            Answer.clear();
             std::cerr << "Invalid input! Please enter either 'y' or 'n'. Set to false!" << std::endl;
             Sleep(3000);
             ClearConsoleScreen();
@@ -52,14 +55,14 @@ namespace InputHandler {
         bool isValid = false;
 
         do {
-            // Clear the console and initilize interface
+            // Clear the console and initialize interface
             ClearConsoleScreen();
             FSModSInterfaceInit();
 
             std::cout << "Enter mod location: " << std::endl;
 
             // Read the entire line of input
-            std::getline(std::cin, Location);
+            std::getline(std::cin >> std::ws, Location);
 
             // Check if the entered location is valid
             if (fs::is_directory(Location)) {
@@ -67,6 +70,7 @@ namespace InputHandler {
             }
             else {
                 std::cout << "Invalid mod location. Please enter a valid directory." << std::endl;
+                Sleep(1000);
                 isValid = false;
             }
 
