@@ -71,16 +71,16 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <TargetName>FSModS-1.0.4-f</TargetName>
+    <TargetName>FSModS-2.0.0-f</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <TargetName>FSModS-1.0.4-f</TargetName>
+    <TargetName>FSModS-2.0.0-f</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <TargetName>FSModS-1.0.4-f</TargetName>
+    <TargetName>FSModS-2.0.0-f</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <TargetName>FSModS-1.0.4-f</TargetName>
+    <TargetName>FSModS-2.0.0-f</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -143,12 +143,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="FolderCreator.cpp" />
     <ClCompile Include="FolderHandler.cpp" />
     <ClCompile Include="FreeSpaceModStarter.cpp" />
     <ClCompile Include="InputHandler.cpp" />
+    <ClCompile Include="VectorMerge.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="FolderCreator.h" />
     <ClInclude Include="FolderHandler.h" />
+    <ClInclude Include="VectorMerge.h" />
     <ClInclude Include="InputHandler.h" />
   </ItemGroup>
   <ItemGroup>

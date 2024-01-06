@@ -1,7 +1,7 @@
 /*
 Designed by LuytenKy
 
-FSModS Ver: 1.0.4-f
+FSModS Ver: 2.0.0-f
 */
 
 #pragma once
@@ -9,4 +9,5 @@ FSModS Ver: 1.0.4-f
 #include <string>
 namespace InputHandler {
 	std::string GetModLocation();
+	bool AllowUnusedDirectories();
 }

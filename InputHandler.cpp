@@ -1,14 +1,17 @@
 /*
 Designed by LuytenKy
 
-FSModS Ver: 1.0.4-f
+FSModS Ver: 2.0.0-f
 */
 
-#include "InputHandler.h"
 #include <iostream>
 #include <windows.h>
 #include <filesystem>
 #include <sstream>
+#include <set>
+
+#include "InputHandler.h"
+
 namespace fs = std::filesystem;
 
 void ClearConsoleScreen() {
@@ -17,12 +20,33 @@ void ClearConsoleScreen() {
 
 void FSModSInterfaceInit() {
     std::cout << "========================================" << std::endl;
-    std::cout << "   FreeSpaceModStarter 1.0.4-f" << std::endl;
+    std::cout << "   FreeSpaceModStarter 2.0.0-f" << std::endl;
     std::cout << "   Designed by LuytenKy" << std::endl;
     std::cout << "========================================" << std::endl;
 }
 
 namespace InputHandler {
+    bool AllowUnusedDirectories() {
+        std::string Answer;
+        FSModSInterfaceInit();
+
+        std::cout << "Allow unused directories? (y for Yes, n for No)" << std::endl;
+        std::cin >> Answer;
+
+        if (Answer == "y" || Answer == "Y") {
+            return true;
+        }
+        else if (Answer == "n" || Answer == "N") {
+            return false;
+        }
+        else {
+            std::cerr << "Invalid input! Please enter either 'y' or 'n'. Set to false!" << std::endl;
+            Sleep(3000);
+            ClearConsoleScreen();
+            return false;
+        }
+    }
+
     std::string GetModLocation() {
         std::string Location;
         bool isValid = false;
