@@ -1,7 +1,7 @@
 /*
 Designed by LuytenKy
 
-FSModS Ver: 1.0.3-f
+FSModS Ver: 1.0.4-f
 */
 
 #include "FolderHandler.h"
@@ -15,10 +15,14 @@ FSModS Ver: 1.0.3-f
 #include <cstdio>
 #endif
 
-/*
-* Remove comment to enable
-* #define AllowUnusedDirectories
-*/
+#define _ALLOW_UNUSED_DIR 0 // 1 to enable 0 to disable
+
+#if _ALLOW_UNUSED_DIR 0
+#define AllowUnusedDirectories 1
+#else
+#define AllowUnusedDirectories 0
+#endif // Allow
+
 
 namespace fs = std::filesystem;
 
@@ -64,7 +68,7 @@ namespace FolderHandler {
             }
         }
         
-#ifdef AllowUnusedDirectories
+#if AllowUnusedDirectories 1
         for (const auto& directory : unusedDirectories) {
             fs::path absolutePath = fs::absolute(ModFileLoc + directory);
 
