@@ -1,7 +1,7 @@
 /*
 Designed by LuytenKy
 
-FSModS Ver: 1.0.2-f
+FSModS Ver: 1.0.3-f
 */
 
 #pragma once

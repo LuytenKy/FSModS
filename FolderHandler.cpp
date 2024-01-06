@@ -1,7 +1,7 @@
 /*
 Designed by LuytenKy
 
-FSModS Ver: 1.0.2-f
+FSModS Ver: 1.0.3-f
 */
 
 #include "FolderHandler.h"
@@ -94,7 +94,7 @@ namespace FolderHandler {
             std::cout << "All directories were successfully generated." << std::endl;
         }
         else {
-            std::cerr << "Some directories failed to be generated." << std::endl;
+            std::cerr << "Some directories failed to be generated. Either they where already present." << std::endl;
         }
 
         std::cout << "Press Enter to continue...";

@@ -1,7 +1,7 @@
 /*
 Designed by LuytenKy
 
-FSModS Ver: 1.0.2-f
+FSModS Ver: 1.0.3-f
 */
 
 #include "InputHandler.h"
@@ -17,7 +17,7 @@ void ClearConsoleScreen() {
 
 void FSModSInterfaceInit() {
     std::cout << "========================================" << std::endl;
-    std::cout << "   FreeSpaceModStarter 1.0.2-f" << std::endl;
+    std::cout << "   FreeSpaceModStarter 1.0.3-f" << std::endl;
     std::cout << "   Designed by LuytenKy" << std::endl;
     std::cout << "========================================" << std::endl;
 }
