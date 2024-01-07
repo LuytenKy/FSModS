@@ -1,7 +1,7 @@
 /*
 Designed by LuytenKy
 
-FSModS Ver: 2.0.1-f
+FSModS Ver: 2.0.2-f
 */
 
 #include <iostream>

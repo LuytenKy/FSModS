@@ -1,7 +1,7 @@
 /*
 Designed by LuytenKy
 
-FSModS Ver: 2.0.1-f
+FSModS Ver: 2.0.2-f
 */
 
 #include <iostream>
@@ -20,7 +20,7 @@ void ClearConsoleScreen() {
 
 void FSModSInterfaceInit() {
     std::cout << "========================================" << std::endl;
-    std::cout << "   FreeSpaceModStarter 2.0.1-f" << std::endl;
+    std::cout << "   FreeSpaceModStarter 2.0.2-f" << std::endl;
     std::cout << "   Designed by LuytenKy" << std::endl;
     std::cout << "========================================" << std::endl;
 }
