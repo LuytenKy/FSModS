@@ -6,7 +6,6 @@ FSModS Ver: 2.0.1-f
 
 #include <filesystem>
 #include <iostream>
-namespace fs = std::filesystem;
 
 #ifdef _WIN32
 #include <conio.h>
